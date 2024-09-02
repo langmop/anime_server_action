@@ -25,13 +25,15 @@ const RangeSelector = ({ maxRange }: { maxRange: number }) => {
   }, [value]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="group relative">
       <TwoThumbInputRange
         onChange={onValueSChange}
         values={value}
         min={0}
         max={maxRange * 60}
+        inputStyle={{ width: "400px" }}
       />
+      <div className="group-hover:!visible absolute hidden">Hello</div>
     </div>
   );
 };
